@@ -32,6 +32,7 @@ nav ul li {
     margin: 0 15px;
 }
 
+
 nav ul li a {
     text-decoration: none;
     color: white;
@@ -39,7 +40,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: lavender;
+    color: yellow;
     font-size: 1.04rem;
 }
 
@@ -55,13 +56,12 @@ nav ul li a:hover {
     align-items: center;
     flex-direction: row;
     height: calc(100vh - 80px); /* Full height minus the navbar height */
-    gap: 20px; /* Small space between the image and text */
-    text-align: center; /* Ensure text is centered */
+    gap: 20px;
+    text-align: center;
 }
 
 .leftSection {
     font-size: 2.5rem;
-    text-align: center; /* Center the text */
     color: #333;
     line-height: 1.5;
 }
@@ -77,10 +77,10 @@ nav ul li a:hover {
 
 /* Image Styling */
 .rightSection img {
-    max-width: 250px; /* Set a maximum size for the image */
+    max-width: 250px;
     height: auto;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add subtle shadow */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* About Me Section */
@@ -91,15 +91,14 @@ nav ul li a:hover {
 }
 
 #aboutSection h1 {
-    font-size: 2rem;
-    margin-bottom: 15px;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
     color: #333;
 }
 
 #aboutSection p {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     line-height: 1.6;
-    color: #555;
     max-width: 70vw;
     margin: 0 auto;
 }
@@ -118,11 +117,10 @@ nav ul li a:hover {
 }
 
 #projectsSection ul {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: #555;
     list-style: none;
     padding-left: 0;
+    font-size: 1.1rem;
+    line-height: 1.6;
 }
 
 #projectsSection ul li {
@@ -151,8 +149,8 @@ nav ul li a:hover {
 
 #contactSection p {
     font-size: 1.1rem;
-    color: #555;
     margin-bottom: 10px;
+    color: #555;
 }
 
 /* Footer */
@@ -164,7 +162,7 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for better separation */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
 }
 
 /* Social Icons */
@@ -189,17 +187,17 @@ footer p {
     font-size: 0.9rem;
 }
 
-/* Ensure the main content has enough bottom padding */
+/* Main content padding to prevent overlap with footer */
 main {
-    padding-bottom: 80px; /* Adjust based on the height of the footer */
+    padding-bottom: 80px;
 }
 
 /* Button Styling */
 .buttons {
     display: flex;
-    justify-content: center; /* Centers buttons horizontally */
-    gap: 10px; /* Adds space between buttons */
-    margin-top: 20px; /* Space above the buttons */
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
 }
 
 .btn {
@@ -209,9 +207,8 @@ main {
     border: 2px solid white;
     border-radius: 6px;
     font-size: 16px;
-    text-decoration: none; /* Remove underline from links */
-    display: inline-block; /* Allows padding and margin to apply */
-    text-align: center; /* Centers text inside the button */
+    text-decoration: none;
+    text-align: center;
     transition: background-color 0.3s ease;
 }
 
@@ -222,17 +219,17 @@ main {
 /* Responsive Design for Tablets and Smaller Screens */
 @media (max-width: 768px) {
     .firstSection {
-        flex-direction: column; /* Stack items vertically on smaller screens */
+        flex-direction: column;
         text-align: center;
     }
 
     .leftSection {
-        margin: 20px 0;
         font-size: 2rem;
+        margin: 20px 0;
     }
 
     .rightSection img {
-        max-width: 200px; /* Smaller image for smaller screens */
+        max-width: 200px;
     }
 
     #projectsSection ul li {
@@ -243,12 +240,17 @@ main {
 /* Responsive Design for Mobile Screens */
 @media (max-width: 480px) {
     nav {
-        height: 60px; /* Adjust navbar height */
+        height: 60px;
+        padding: 0 10px;
     }
 
-    .firstSection {
+    nav ul {
         flex-direction: column;
-        padding: 10px;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
     }
 
     .leftSection {
@@ -256,58 +258,51 @@ main {
     }
 
     .rightSection img {
-        max-width: 150px; /* Further reduce image size */
+        max-width: 150px;
     }
 
     #projectsSection ul li {
         max-width: 90%;
     }
-}
-.secondSection{
-    font-size: 5rem; /* Increased font size for better readability */
-    margin: 50px 20px; /* Increased margin for spacing around */
-    line-height: 1.6; /* To increase space between lines for readability */
-    text-align: justify; /* Makes the text align in block form */
+
+    footer {
+        font-size: 0.8rem;
+    }
 }
 
-/* You can add some padding to give space inside the section */
+.secondSection {
+    font-size: 2.5rem;
+    margin: 50px 20px;
+    line-height: 1.6;
+    text-align: justify;
+}
+
 .secondSection > p {
     padding: 20px;
 }
 
-/* Make it responsive by adjusting for smaller screens */
-@media screen and (max-width: 768px) {
+@media (max-width: 768px) {
     .secondSection {
-        font-size: 1.5rem; /* Slightly smaller font size for smaller screens */
-        margin: 30px 15px; /* Adjusted margin for smaller devices */
+        font-size: 1.5rem;
+        margin: 30px 15px;
     }
 }
-#aboutSection{
+
+#aboutSection {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Full screen height */
-    background-color: beige; /* Optional background */
+    height: 100vh;
     padding: 20px;
+    background-color: beige;
     text-align: center;
 }
 
-#aboutSection h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: #333;
-}
-
-#aboutSection p {
-    font-size: 1.2rem;
-    max-width: 800px; /* Limits the width of the text */
-    line-height: 1.6;
-    color: #555;
-}
-@media screen and (max-width: 768px) {
+@media (max-width: 768px) {
     #aboutSection {
-        font-size: 1.5rem; /* Slightly smaller font size for smaller screens */
-        margin: 30px 15px; /* Adjusted margin for smaller devices */
+        font-size: 1.5rem;
+        margin: 30px 15px;
     }
 }
+
