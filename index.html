@@ -6,41 +6,35 @@
     <link rel="stylesheet" href="styles.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>A.M Salar Raza - Developer Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <header>
         <nav>
             <div class="left">Salar's Portfolio</div>
-            <div class="right">
-                <ul>
-                    <li><a href="#firstSection">Home</a></li>
-                    <li><a href="#aboutSection">About Me</a></li>
-                    <li><a href="#projectsSection">Projects</a></li>
-                    <li><a href="#contactSection">Contact Me</a></li>
-                </ul>
-            </div>
+            <button class="toggle-btn" onclick="toggleNav()">&#9776;</button>
+            <ul id="navbar" class="nav-hidden">
+                <li><a href="#firstSection">Home</a></li>
+                <li><a href="#aboutSection">About Me</a></li>
+                <li><a href="#projectsSection">Projects</a></li>
+                <li><a href="#contactSection">Contact Me</a></li>
+            </ul>
         </nav>
     </header>
 
     <main>
         <!-- First Section -->
-        <section class="firstSection">
+        <section class="firstSection" id="firstSection">
             <div class="leftSection">
                 Hi, My name is <span class="peach">Salar</span>
                 <div>and I am Passionate</div>
                 <span id="element"></span>
                 <div class="buttons">
-                    <a href="https://drive.google.com/file/d/1y-dbC2mdZZJTWoxeMYU1rimwqFgwMJfk/view?usp=sharing"
-                        target="_blank" class="btn">Download Resume</a>
+                    <a href="https://drive.google.com/file/d/1y-dbC2mdZZJTWoxeMYU1rimwqFgwMJfk/view?usp=sharing" target="_blank" class="btn">Download Resume</a>
                     <a href="https://github.com/SalarRaza" target="_blank" class="btn">Visit GitHub</a>
                 </div>
             </div>
@@ -55,7 +49,7 @@
         <section id="aboutSection" class="secondSection">
             <h1>About Me</h1>
             <p>
-                I am <strong>A.M Salar Raza</strong>,a highly motivated  Computer Science postgraduate pursuing MS at IIIT Hyderabad with a deep passion
+                I am <strong>A.M Salar Raza</strong>, a highly motivated Computer Science postgraduate pursuing MS at IIIT Hyderabad with a deep passion
                 for AI and data-driven solutions.
                 I possess expertise in Python, deep learning frameworks, and advanced data structures. I'm eager to find
                 a challenging opportunity where
@@ -95,17 +89,23 @@
     <script>
         var typed = new Typed('#element', {
             strings: ['Web Developer', 'Cloud Engineer', 'Network Administrator', 'Data Scientist'],
-            typeSpeed: 50,
+            typeSpeed: 40,
         });
+
+        function toggleNav() {
+            const navbar = document.getElementById("navbar");
+            navbar.classList.toggle("nav-active");
+            navbar.classList.toggle("nav-hidden");
+        }
     </script>
 </body>
 
 <footer>
     <div class="social-icons">
         <a href="https://www.facebook.com/ahmedmoin.salarraza.58/" target="_blank" class="fa-brands fa-facebook"></a>
-        <a href="https://www.linkedin.com/in/ahmed-moin-salar-raza-879631222"target="_blank" class="fa-brands fa-linkedin"></a>
-        <a href="https://www.instagram.com/i_am_salarraza/" target="_blank"class="fa-brands fa-instagram"></a>
-            <a href="https://x.com/Ronaldo1240861" target="_blank" class="fa-brands fa-twitter"></a>
+        <a href="https://www.linkedin.com/in/ahmed-moin-salar-raza-879631222" target="_blank" class="fa-brands fa-linkedin"></a>
+        <a href="https://www.instagram.com/i_am_salarraza/" target="_blank" class="fa-brands fa-instagram"></a>
+        <a href="https://x.com/Ronaldo1240861" target="_blank" class="fa-brands fa-twitter"></a>
         <p>&copy; A.M Salar Raza Portfolio. All Rights Reserved.</p>
     </div>
 </footer>
