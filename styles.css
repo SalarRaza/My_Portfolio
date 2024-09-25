@@ -7,8 +7,9 @@
 
 /* Body Styling */
 body {
-    background-color: beige;
+    background-color: rgb(246, 246, 234);
     font-family: 'Poppins', sans-serif;
+    
 }
 
 /* Navbar Styling */
@@ -17,9 +18,11 @@ nav {
     justify-content: space-between;
     align-items: center;
     height: 80px;
-    background-color: aquamarine;
+    background-color: royalblue;
     padding: 0 20px;
     color: aliceblue;
+    position: fixed;
+    width: 100%
 }
 
 nav ul {
@@ -32,21 +35,35 @@ nav ul li {
     margin: 0 15px;
 }
 
-
 nav ul li a {
-    text-decoration: none;
+    text-decoration:solid;
     color: white;
     transition: color 0.3s ease, font-size 0.3s ease;
 }
 
-nav ul li a:hover {
-    color: yellow;
+
+nav ul li a:hover{
+    color: black;
     font-size: 1.04rem;
+}
+/* Styling for active navigation link */
+nav ul li a.active {
+    background-color: black; /* Add a background color to make it stand out */
+    color: white; /* Keep text color distinct */
+    font-size: 1.04rem; /* Ensure it remains slightly larger */
+    border-radius: 5px; /* Add some rounded corners for styling */
+    padding: 5px 10px; /* Add some padding */
 }
 
 .left {
     font-size: 1.5rem;
     font-weight: bold;
+}
+
+/* Toggle Button (for mobile view) */
+#menuToggle {
+    display: none;
+    cursor: pointer;
 }
 
 /* First Section */
@@ -67,11 +84,11 @@ nav ul li a:hover {
 }
 
 .peach {
-    color: rgb(240, 149, 37);
+    color: rgb(37, 162, 240);
 }
 
 #element {
-    color: rgb(240, 149, 37);
+    color: rgb(37, 162, 240);
     font-weight: bold;
 }
 
@@ -124,7 +141,7 @@ nav ul li a:hover {
 }
 
 #projectsSection ul li {
-    background-color: aquamarine;
+    background-color: royalblue;
     color: white;
     padding: 10px;
     margin: 10px 0;
@@ -132,6 +149,13 @@ nav ul li a:hover {
     max-width: 50%;
     margin-left: auto;
     margin-right: auto;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Add transition for smooth hover effect */
+}
+#projectsSection ul li:hover {
+    background-color: #1e90ff; /* Change background color on hover */
+    color: #fff;               /* Ensure text remains white on hover */
+    transform: scale(1.05);    /* Slight scaling effect */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
 }
 
 /* Contact Me Section */
@@ -155,11 +179,11 @@ nav ul li a:hover {
 
 /* Footer */
 footer {
-    background-color: aquamarine;
+    background-color: royalblue;
     padding: 20px 0;
     text-align: center;
     color: aliceblue;
-    position: fixed;
+    position: bottom;
     bottom: 0;
     width: 100%;
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
@@ -235,6 +259,37 @@ main {
     #projectsSection ul li {
         max-width: 70%;
     }
+
+    /* Show Toggle Button */
+    #menuToggle {
+        display: block;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background-color: royalblue;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .left {
+        font-size: 1.5rem;
+    }
+
+    footer {
+        font-size: 0.8rem;
+    }
 }
 
 /* Responsive Design for Mobile Screens */
@@ -242,15 +297,6 @@ main {
     nav {
         height: 60px;
         padding: 0 10px;
-    }
-
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    nav ul li {
-        margin: 10px 0;
     }
 
     .leftSection {
@@ -264,45 +310,4 @@ main {
     #projectsSection ul li {
         max-width: 90%;
     }
-
-    footer {
-        font-size: 0.8rem;
-    }
 }
-
-.secondSection {
-    font-size: 2.5rem;
-    margin: 50px 20px;
-    line-height: 1.6;
-    text-align: justify;
-}
-
-.secondSection > p {
-    padding: 20px;
-}
-
-@media (max-width: 768px) {
-    .secondSection {
-        font-size: 1.5rem;
-        margin: 30px 15px;
-    }
-}
-
-#aboutSection {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    padding: 20px;
-    background-color: beige;
-    text-align: center;
-}
-
-@media (max-width: 768px) {
-    #aboutSection {
-        font-size: 1.5rem;
-        margin: 30px 15px;
-    }
-}
-
