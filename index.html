@@ -17,7 +17,7 @@
 <body>
     <header>
         <nav>
-            <div class="left">Salar's Portfolio</div>
+            <div class="left">A.M Salar Raza</div>
             <span id="menuToggle" class="fas fa-bars"></span>
             <ul class="right" id="navLinks">
                 <li><a href="#firstSection">Home</a></li>
@@ -32,7 +32,7 @@
         <!-- First Section -->
         <section class="firstSection" id="firstSection">
             <div class="leftSection">
-                Hi, My name is <span class="peach">Salar</span>
+                Hi, My name is <span class="sky">A.M Salar Raza</span>
                 <div>and I am Passionate</div>
                 <span id="element"></span>
                 <div class="buttons">
@@ -87,9 +87,41 @@
         <hr>
 
         <!-- Contact Me Section -->
-        <section id="contactSection" class="secondSection">
-            <h1>Contact Me</h1>
-            <p>Email: <a href="mailto:salarraza28@gmail.com">salarraza28@gmail.com</a></p>
+       <!-- Contact Me Section -->
+<section id="contactSection" class="secondSection">
+    <h1>Contact Me</h1>
+    <p>Please feel free to send me a message using the form below.</p>
+
+    <form
+        id="contactForm"
+        action="https://formspree.io/f/mnnakebj"
+        method="POST"
+    >
+        <div class="form-group">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        </div>
+        <div class="form-group">
+            <label for="subject">Subject:</label>
+            <input type="text" id="subject" name="subject" placeholder="Enter the subject" required>
+        </div>
+        <div class="form-group">
+            <label for="message">Your Message:</label>
+            <textarea id="message" name="message" rows="5" placeholder="Enter your message" required></textarea>
+        </div>
+        <button type="submit" class="btn">Send Message</button>
+    </form>
+
+    <br>
+    <p>Email: <a href="mailto:salarraza28@gmail.com">salarraza28@gmail.com</a></p>
+    <br>
+</section>
+
+           
         </section>
     </main>
 
@@ -121,11 +153,10 @@
         });
 
        // Select all navigation links
-const navLinks = document.querySelectorAll('nav ul li a');
+ const navLinks = document.querySelectorAll('nav ul li a');
+let activeLink = null;  // Track the currently active link
 
-// Keep track of the currently active link
-let activeLink = null;
-
+// Add click event to navigation links
 navLinks.forEach(link => {
     link.addEventListener('click', function () {
         // If there is an already active link, remove the 'active' class
@@ -137,6 +168,37 @@ navLinks.forEach(link => {
         activeLink = this;  // Update the activeLink reference
     });
 });
+
+// Function to update active link based on scroll
+function updateActiveLinkOnScroll() {
+    const sections = document.querySelectorAll('section');  // Assumes your sections have a 'section' tag
+    let currentSection = null;
+
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+
+        if (window.scrollY >= sectionTop - sectionHeight / 3) {
+            currentSection = section;
+        }
+    });
+
+    // Update the active link based on the section currently in view
+    if (currentSection) {
+        const newActiveLink = document.querySelector(`nav ul li a[href="#${currentSection.id}"]`);
+
+        if (newActiveLink && newActiveLink !== activeLink) {
+            if (activeLink) {
+                activeLink.classList.remove('active');  // Remove active class from previous link
+            }
+            newActiveLink.classList.add('active');  // Add active class to the new link
+            activeLink = newActiveLink;  // Update the activeLink reference
+        }
+    }
+}
+
+// Add scroll event listener to update active link while scrolling
+window.addEventListener('scroll', updateActiveLinkOnScroll);
 
     </script>
 

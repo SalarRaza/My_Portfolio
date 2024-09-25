@@ -7,9 +7,9 @@
 
 /* Body Styling */
 body {
-    background-color: rgb(246, 246, 234);
+    background-color: white;
     font-family: 'Poppins', sans-serif;
-    
+    color: #111; 
 }
 
 /* Navbar Styling */
@@ -22,7 +22,9 @@ nav {
     padding: 0 20px;
     color: aliceblue;
     position: fixed;
-    width: 100%
+    width: 100%;
+    z-index: 999;
+    top: 0;
 }
 
 nav ul {
@@ -43,7 +45,7 @@ nav ul li a {
 
 
 nav ul li a:hover{
-    color: black;
+    color: #797979;;
     font-size: 1.04rem;
 }
 /* Styling for active navigation link */
@@ -62,19 +64,30 @@ nav ul li a.active {
 
 /* Toggle Button (for mobile view) */
 #menuToggle {
-    display: none;
+    display: none; /* Make sure it's visible */
     cursor: pointer;
+    font-size: 2rem; /* Adjust this to increase the size of the toggle icon */
+    width: 50px; /* Width of the toggle button */
+    height: 50px; /* Height of the toggle button */
+    padding: 10px; /* Padding inside the toggle button */
 }
 
+
+section {
+    scroll-margin-top: 80px; /* Adjust for navbar height */
+    min-height: calc(100vh - 80px); /* Full screen height minus fixed navbar */
+    padding-top: 80px; /* Prevent content from hiding behind the navbar */
+}
 /* First Section */
 .firstSection {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    height: calc(100vh - 80px); /* Full height minus the navbar height */
+    height: 100vh; /* Full height minus the navbar height */
     gap: 20px;
     text-align: center;
+    padding-top: 80px;
 }
 
 .leftSection {
@@ -83,7 +96,7 @@ nav ul li a.active {
     line-height: 1.5;
 }
 
-.peach {
+.sky {
     color: rgb(37, 162, 240);
 }
 
@@ -105,8 +118,13 @@ nav ul li a.active {
     background-color: #f5f5f5;
     padding: 40px 20px;
     text-align: center;
+    min-height: calc(100vh - 80px);
+    
 }
-
+#aboutSection:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
 #aboutSection h1 {
     font-size: 2.5rem;
     margin-bottom: 20px;
@@ -125,6 +143,7 @@ nav ul li a.active {
     background-color: #ffffff;
     padding: 40px 20px;
     text-align: center;
+    min-height: calc(100vh - 80px);
 }
 
 #projectsSection h1 {
@@ -152,7 +171,7 @@ nav ul li a.active {
     transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Add transition for smooth hover effect */
 }
 #projectsSection ul li:hover {
-    background-color: #1e90ff; /* Change background color on hover */
+    background-color: #3399ff; /* Change background color on hover */
     color: #fff;               /* Ensure text remains white on hover */
     transform: scale(1.05);    /* Slight scaling effect */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
@@ -163,6 +182,55 @@ nav ul li a.active {
     background-color: #e6e6e6;
     padding: 40px 20px;
     text-align: center;
+    min-height: calc(100vh - 100vh);
+}
+/* Contact Form Styling */
+#contactForm {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    font-size: 1rem;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.form-group input, 
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.form-group input:focus, 
+.form-group textarea:focus {
+    border-color: royalblue;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 0, 255, 0.3);
+}
+
+#contactForm .btn {
+    background-color: royalblue;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#contactForm .btn:hover {
+    background-color: darkblue;
 }
 
 #contactSection h1 {
@@ -182,7 +250,7 @@ footer {
     background-color: royalblue;
     padding: 20px 0;
     text-align: center;
-    color: aliceblue;
+    color: #f0f0f0;
     position: bottom;
     bottom: 0;
     width: 100%;
