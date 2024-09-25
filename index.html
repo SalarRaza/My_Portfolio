@@ -9,15 +9,17 @@
     <title>A.M Salar Raza - Developer Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
     <header>
         <nav>
             <div class="left">Salar's Portfolio</div>
-            <button class="toggle-btn" onclick="toggleNav()">&#9776;</button>
-            <ul id="navbar" class="nav-hidden">
+            <span id="menuToggle" class="fas fa-bars"></span>
+            <ul class="right" id="navLinks">
                 <li><a href="#firstSection">Home</a></li>
                 <li><a href="#aboutSection">About Me</a></li>
                 <li><a href="#projectsSection">Projects</a></li>
@@ -34,7 +36,8 @@
                 <div>and I am Passionate</div>
                 <span id="element"></span>
                 <div class="buttons">
-                    <a href="https://drive.google.com/file/d/1y-dbC2mdZZJTWoxeMYU1rimwqFgwMJfk/view?usp=sharing" target="_blank" class="btn">Download Resume</a>
+                    <a href="https://drive.google.com/file/d/1y-dbC2mdZZJTWoxeMYU1rimwqFgwMJfk/view?usp=sharing"
+                        target="_blank" class="btn">Download Resume</a>
                     <a href="https://github.com/SalarRaza" target="_blank" class="btn">Visit GitHub</a>
                 </div>
             </div>
@@ -47,9 +50,12 @@
 
         <!-- About Me Section -->
         <section id="aboutSection" class="secondSection">
+            <br>
+            </br>
             <h1>About Me</h1>
             <p>
-                I am <strong>A.M Salar Raza</strong>, a highly motivated Computer Science postgraduate pursuing MS at IIIT Hyderabad with a deep passion
+                I am <strong>A.M Salar Raza</strong>, a highly motivated Computer Science postgraduate pursuing MS at
+                IIIT Hyderabad with a deep passion
                 for AI and data-driven solutions.
                 I possess expertise in Python, deep learning frameworks, and advanced data structures. I'm eager to find
                 a challenging opportunity where
@@ -64,6 +70,8 @@
 
         <!-- Projects Section -->
         <section id="projectsSection" class="secondSection">
+            <br>
+            </br>
             <h1>Projects</h1>
             <h3>Major Projects</h3>
             <ul>
@@ -85,29 +93,52 @@
         </section>
     </main>
 
+    <footer>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/ahmedmoin.salarraza.58/" target="_blank" class="fa-brands fa-facebook"></a>
+            <a href="https://www.linkedin.com/in/ahmed-moin-salar-raza-879631222" target="_blank"
+                class="fa-brands fa-linkedin"></a>
+            <a href="https://www.instagram.com/i_am_salarraza/" target="_blank" class="fa-brands fa-instagram"></a>
+            <a href="https://x.com/Ronaldo1240861" target="_blank" class="fa-brands fa-twitter"></a>
+            <p>&copy; A.M Salar Raza Portfolio. All Rights Reserved.</p>
+        </div>
+    </footer>
+
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script>
+        // Typed.js initialization for animated typing effect
         var typed = new Typed('#element', {
             strings: ['Web Developer', 'Cloud Engineer', 'Network Administrator', 'Data Scientist'],
             typeSpeed: 40,
+            backSpeed: 30,
+            loop: true,
+            backDelay: 1000,
         });
 
-        function toggleNav() {
-            const navbar = document.getElementById("navbar");
-            navbar.classList.toggle("nav-active");
-            navbar.classList.toggle("nav-hidden");
+        // Toggle navigation bar for mobile view
+        document.getElementById('menuToggle').addEventListener('click', function () {
+            document.getElementById('navLinks').classList.toggle('active');
+        });
+
+       // Select all navigation links
+const navLinks = document.querySelectorAll('nav ul li a');
+
+// Keep track of the currently active link
+let activeLink = null;
+
+navLinks.forEach(link => {
+    link.addEventListener('click', function () {
+        // If there is an already active link, remove the 'active' class
+        if (activeLink) {
+            activeLink.classList.remove('active');
         }
+        // Set the clicked link as the new active link
+        this.classList.add('active');
+        activeLink = this;  // Update the activeLink reference
+    });
+});
+
     </script>
+
 </body>
-
-<footer>
-    <div class="social-icons">
-        <a href="https://www.facebook.com/ahmedmoin.salarraza.58/" target="_blank" class="fa-brands fa-facebook"></a>
-        <a href="https://www.linkedin.com/in/ahmed-moin-salar-raza-879631222" target="_blank" class="fa-brands fa-linkedin"></a>
-        <a href="https://www.instagram.com/i_am_salarraza/" target="_blank" class="fa-brands fa-instagram"></a>
-        <a href="https://x.com/Ronaldo1240861" target="_blank" class="fa-brands fa-twitter"></a>
-        <p>&copy; A.M Salar Raza Portfolio. All Rights Reserved.</p>
-    </div>
-</footer>
-
 </html>
