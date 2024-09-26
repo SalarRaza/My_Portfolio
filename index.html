@@ -70,8 +70,6 @@
 
         <!-- Projects Section -->
         <section id="projectsSection" class="secondSection">
-            <br>
-            </br>
             <h1>Projects</h1>
             <h3>Major Projects</h3>
             <ul>
@@ -82,6 +80,8 @@
             <ul>
                 <li>Titanic Survival Prediction using Naive Bayes</li>
             </ul>
+            <a href="myprojects.html" class="view-projects-button">View Projects</a>
+
         </section>
 
         <hr>
@@ -199,6 +199,26 @@ function updateActiveLinkOnScroll() {
 
 // Add scroll event listener to update active link while scrolling
 window.addEventListener('scroll', updateActiveLinkOnScroll);
+// Dark mode toggle functionality
+const darkModeToggle = document.getElementById('darkModeToggle');
+const body = document.body;
+
+// Check if the user has previously selected dark mode
+const currentMode = localStorage.getItem('mode');
+if (currentMode === 'dark') {
+    body.classList.add('dark-mode');
+}
+
+darkModeToggle.addEventListener('click', function () {
+    body.classList.toggle('dark-mode');
+    
+    // Save the user's mode preference in localStorage
+    if (body.classList.contains('dark-mode')) {
+        localStorage.setItem('mode', 'dark');
+    } else {
+        localStorage.setItem('mode', 'light');
+    }
+});
 
     </script>
 

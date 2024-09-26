@@ -4,23 +4,62 @@
     padding: 0;
     box-sizing: border-box;
 }
+:root {
+    --background-color: white;
+    --text-color: #111;
+    --nav-background-color: royalblue;
+    --nav-text-color: aliceblue;
+    --section-background-color: #f5f5f5;
+    --section-text-color: #333;
+    --btn-background-color: royalblue;
+    --btn-text-color: white;
+}
 
 /* Body Styling */
 body {
-    background-color: white;
+    background-color: var(--background-color);
     font-family: 'Poppins', sans-serif;
-    color: #111; 
+    color:var(--text-color); 
+}
+body.dark-mode {
+    --background-color: #111;
+    --text-color: #f0f0f0;
+    --nav-background-color:#333;
+    --nav-text-color: #f0f0f0;
+    --section-background-color: #222;
+    --section-text-color: #f0f0f0;
+    --btn-background-color: #555;
+    --btn-text-color: #f0f0f0;
+}
+body.dark-mode .leftSection {
+    background-color: black; /* Set background to black */
+    color: white; /* Set text to white */
+}
+#darkModeToggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    z-index: 1000; /* Ensures it stays above other content */
 }
 
+#darkModeToggle:hover {
+    background-color: #555;
+}
 /* Navbar Styling */
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 80px;
-    background-color: royalblue;
+    background-color:  var(--nav-background-color);
     padding: 0 20px;
-    color: aliceblue;
+    color: var(--nav-text-color);
     position: fixed;
     width: 100%;
     z-index: 999;
@@ -74,6 +113,8 @@ nav ul li a.active {
 
 
 section {
+    background-color: var(--section-background-color);
+    color: var(--section-text-color);
     scroll-margin-top: 80px; /* Adjust for navbar height */
     min-height: calc(100vh - 80px); /* Full screen height minus fixed navbar */
     padding-top: 80px; /* Prevent content from hiding behind the navbar */
@@ -115,7 +156,7 @@ section {
 
 /* About Me Section */
 #aboutSection {
-    background-color: #f5f5f5;
+     background-color: var(--section-background-color);
     padding: 40px 20px;
     text-align: center;
     min-height: calc(100vh - 80px);
@@ -128,7 +169,7 @@ section {
 #aboutSection h1 {
     font-size: 2.5rem;
     margin-bottom: 20px;
-    color: #333;
+    color: var(--section-text-color);
 }
 
 #aboutSection p {
@@ -140,7 +181,8 @@ section {
 
 /* Projects Section */
 #projectsSection {
-    background-color: #ffffff;
+    background-color: var(--section-background-color); /* Dark mode will change this dynamically */
+    color: var(--section-text-color); /* Text color changes dynamically in dark mode */
     padding: 40px 20px;
     text-align: center;
     min-height: calc(100vh - 80px);
@@ -149,7 +191,7 @@ section {
 #projectsSection h1 {
     font-size: 2rem;
     margin-bottom: 20px;
-    color: #333;
+    color: var(--section-text-color);
 }
 
 #projectsSection ul {
@@ -191,6 +233,7 @@ section {
     max-width: 500px;
     margin: 0 auto;
     text-align: left;
+    color: #000;
 }
 
 .form-group {
@@ -354,6 +397,7 @@ main {
     .left {
         font-size: 1.5rem;
     }
+    
 
     footer {
         font-size: 0.8rem;
@@ -378,4 +422,23 @@ main {
     #projectsSection ul li {
         max-width: 90%;
     }
+}
+/* View Projects Button Styling */
+.view-projects-button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #007BFF;
+    color: white;
+    font-size: 1.2rem;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover effect */
+.view-projects-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px);
 }
